@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الأعمال | إبداع العرب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } },
+                    fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="brand-depth.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>body { font-family: 'Cairo', sans-serif; } [x-cloak] { display: none !important; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white overflow-x-hidden" x-data="{ mobileMenu: false }">
+    <!-- Header Component -->
+<header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-slate-700/80 p-1 shadow-lg shadow-indigo-900/20 group-hover:scale-105 transition duration-300">
+                <img src="logo.svg" alt="شعار إبداع العرب" class="w-full h-full object-contain rounded-xl bg-white">
+            </div>
+            <div>
+                <span class="text-2xl font-black bg-gradient-to-r from-indigo-400 via-violet-300 to-pink-400 bg-clip-text text-transparent">إبداع العرب</span>
+                <span class="block text-xs text-slate-400">للحلول الرقمية والتسويقية</span>
+            </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium">
+            <a href="index.html" class="nav-home text-slate-300 hover:text-indigo-400 transition">الرئيسية</a>
+            <a href="about.html" class="nav-about text-slate-300 hover:text-indigo-400 transition">من نحن</a>
+            <a href="services.html" class="nav-services text-slate-300 hover:text-indigo-400 transition">خدماتنا</a>
+            <a href="portfolio.html" class="nav-portfolio text-indigo-400 font-bold border-b-2 border-indigo-400 pb-1 hover:text-indigo-400 transition">معرض الأعمال</a>
+            <a href="contact.html" class="nav-contact text-slate-300 hover:text-indigo-400 transition">تواصل معنا</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4">
+            <a href="https://wa.me/966566166251" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-emerald-600/25 transition transform hover:-translate-y-0.5">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>056 616 6251</span>
+            </a>
+        </div>
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-slate-300 hover:text-white text-2xl p-2 focus:outline-none">
+            <i :class="mobileMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
+    </div>
+    <div x-show="mobileMenu" x-transition class="md:hidden bg-slate-800 border-b border-slate-700 px-6 py-4 space-y-4">
+        <nav class="flex flex-col space-y-3 font-medium">
+            <a href="index.html" class="text-slate-300">الرئيسية</a>
+            <a href="about.html" class="text-slate-300">من نحن</a>
+            <a href="services.html" class="text-slate-300">خدماتنا</a>
+            <a href="portfolio.html" class="text-slate-300">معرض الأعمال</a>
+            <a href="contact.html" class="text-slate-300">تواصل معنا</a>
+        </nav>
+        <div class="pt-4 border-t border-slate-700 flex flex-col gap-3">
+            <a href="https://wa.me/966566166251" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-semibold">
+                <i class="fa-brands fa-whatsapp text-lg"></i> <span>تواصل عبر واتساب</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+    
+    <section class="premium-page-hero py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-indigo-400 font-semibold tracking-wide uppercase text-sm bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">معرض الأعمال</span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-6">نماذج من أعمالنا ومشاريعنا المنجزة</h1>
+            <p class="text-slate-300 text-lg leading-relaxed">استعرض نماذج أعمالنا المختلفة في التصوير، المونتاج، التصاميم، والمتاجر الإلكترونية مباشرة داخل الموقع.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-900/50" x-data="{ tab: 'all' }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                <button @click="tab = 'all'" :class="tab === 'all' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-6 py-2.5 rounded-xl font-semibold transition">جميع الأعمال</button>
+                <button @click="tab = 'photo'" :class="tab === 'photo' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-6 py-2.5 rounded-xl font-semibold transition">التصوير الفوتوغرافي</button>
+                <button @click="tab = 'video'" :class="tab === 'video' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-6 py-2.5 rounded-xl font-semibold transition">المونتاج والفيديو</button>
+                <button @click="tab = 'design'" :class="tab === 'design' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-6 py-2.5 rounded-xl font-semibold transition">التصاميم</button>
+                <button @click="tab = 'store'" :class="tab === 'store' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'" class="px-6 py-2.5 rounded-xl font-semibold transition">المتاجر الإلكترونية</button>
+            </div>
+
+            <div class="mb-12 rounded-[2rem] border border-indigo-500/30 bg-gradient-to-r from-indigo-950/80 via-slate-900 to-violet-950/80 p-6 sm:p-8 shadow-2xl shadow-indigo-950/20">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-300">
+                            <i class="fa-solid fa-video"></i> أعمال المونتاج
+                        </span>
+                        <h3 class="mt-4 text-2xl sm:text-3xl font-black text-white">معرض فيديوهاتنا الاحترافية</h3>
+                        <p class="mt-3 max-w-2xl text-slate-300 leading-8">يمكنك الاطلاع على أعمالنا في المونتاج والإعلانات عبر رابط Google Drive الرسمي، والذي يحتوي على ملفات ومشاريع تم تنفيذها بتقنيات احترافية ومحتوى جذاب.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1JvB54zH53IcZCPNekAI6rVETu_9pVaVh?usp=drive_link" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-6 py-3.5 font-black shadow-lg shadow-emerald-900/20 transition">
+                        <i class="fa-brands fa-google-drive"></i>
+                        عرض أعمال المونتاج
+                    </a>
+                </div>
+            </div>
+
+            <div class="mb-12 rounded-[2rem] border border-violet-500/30 bg-gradient-to-r from-violet-950/80 via-slate-900 to-pink-950/80 p-6 sm:p-8 shadow-2xl shadow-violet-950/20">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-3 py-1 text-xs font-bold text-violet-300">
+                            <i class="fa-solid fa-palette"></i> أعمال التصاميم والمنيو
+                        </span>
+                        <h3 class="mt-4 text-2xl sm:text-3xl font-black text-white">معرض التصاميم والملفات الإبداعية</h3>
+                        <p class="mt-3 max-w-2xl text-slate-300 leading-8">تصفح أعمالنا في التصميم الجرافيكي، القوائم، المنيو، التصاميم التسويقية، والهوية البصرية عبر معرض Google Drive الخاص بنا.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1aalBJm16KgHELRziQLEMmhGvQoHikOJM" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-pink-600 hover:from-violet-500 hover:to-pink-500 text-white px-6 py-3.5 font-black shadow-lg shadow-violet-900/20 transition">
+                        <i class="fa-brands fa-google-drive"></i>
+                        عرض تصاميمنا والمنيو
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div x-show="tab === 'all' || tab === 'photo'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-indigo-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-camera text-4xl text-indigo-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">مشروع تصوير منتجات احترافي</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">تصوير فوتوغرافي</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">جلسة تصوير منتجات</h3>
+                        <p class="text-slate-400 text-sm">تصوير عالي الدقة لإبراز تفاصيل المنتجات بأحدث إضاءات الاستوديو.</p>
+                    </div>
+                </div>
+
+                <div x-show="tab === 'all' || tab === 'video'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-violet-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-violet-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-video text-4xl text-violet-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">مشروع مونتاج فيديو إعلاني</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full">مونتاج وفيديو</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">إعلان تجاري سينمائي</h3>
+                        <p class="text-slate-400 text-sm">مونتاج احترافي وموشن جرافيك متطور مع تصحيح ألوان سينمائي.</p>
+                    </div>
+                </div>
+
+                <div x-show="tab === 'all' || tab === 'design'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-amber-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-amber-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-palette text-4xl text-amber-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">تصميم هوية ومينيو</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full">تصاميم ومينيوهات</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">هوية بصرية ومينيو عصري</h3>
+                        <p class="text-slate-400 text-sm">تصميم شعار فريد ومينيو مطبوع ورقمي بأعلى معايير الجرافيك.</p>
+                    </div>
+                </div>
+
+                <div x-show="tab === 'all' || tab === 'store'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-emerald-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-store text-4xl text-emerald-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">متجر إلكتروني متكامل</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">متاجر إلكترونية</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">تطوير متجر على سلة وزد</h3>
+                        <p class="text-slate-400 text-sm">متجر إلكتروني متكامل مع بوابات دفع آمنة وتصميم واجهة مستخدم مميزة.</p>
+                    </div>
+                </div>
+
+                <div x-show="tab === 'all' || tab === 'design'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-pink-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-pink-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-layer-group text-4xl text-pink-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">هوية رقمية مؤسسية</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full">هوية بصرية</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">تصميم هويات تجارية</h3>
+                        <p class="text-slate-400 text-sm">أعمال هوية كاملة تشمل اللوجو، النمط البصري، والمواد التسويقية.</p>
+                    </div>
+                </div>
+
+                <div x-show="tab === 'all' || tab === 'photo'" class="bg-slate-800/60 border border-slate-700 rounded-[1.75rem] overflow-hidden group hover:border-cyan-500/50 transition">
+                    <div class="h-60 bg-gradient-to-br from-slate-900 via-cyan-950 to-slate-800 flex flex-col items-center justify-center border-b border-slate-700 p-4 text-center">
+                        <i class="fa-solid fa-images text-4xl text-cyan-400 mb-2"></i>
+                        <span class="text-white font-bold text-sm">ألبوم تصوير فعاليات</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full">فعاليات</span>
+                        <h3 class="text-xl font-bold text-white mt-3 mb-2">تغطية فعالية كاملة</h3>
+                        <p class="text-slate-400 text-sm">تغطية احترافية للفعاليات الخارجية والداخلية ومشاهد التفاعل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+<footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-gem"></i></div>
+                    <span class="text-xl font-bold text-white">إبداع العرب</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    شركة سعودية رائدة في التصوير الفوتوغرافي، مونتاج الفيديو، التصميم الجرافيك، المتاجر الإلكترونية، والتسويق الرقمي.
+                </p>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="https://wa.me/966566166251" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:info@ebdaa.shop" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:966566166251" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-violet-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">روابط سريعة</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-indigo-400 transition">الرئيسية</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-400 transition">من نحن</a></li>
+                    <li><a href="services.html" class="hover:text-indigo-400 transition">خدماتنا الاحترافية</a></li>
+                    <li><a href="portfolio.html" class="hover:text-indigo-400 transition">معرض الأعمال</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-400 transition">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">خدماتنا الرئيسية</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="services.html#photography" class="hover:text-indigo-400 transition">التصوير الفوتوغرافي</a></li>
+                    <li><a href="services.html#video" class="hover:text-indigo-400 transition">المونتاج الاحترافي</a></li>
+                    <li><a href="services.html#ads" class="hover:text-indigo-400 transition">الحملات الإعلانية</a></li>
+                    <li><a href="services.html#ecommerce" class="hover:text-indigo-400 transition">المتاجر الإلكترونية</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">تواصل معنا</h3>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-indigo-400 mt-1"></i><span>المملكة العربية السعودية - تغطية شاملة لجميع مدن المملكة</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-indigo-400"></i><span dir="ltr">056 616 6251 (966+)</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-indigo-400"></i><span>info@ebdaa.shop</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-sm">
+            <p>&copy; 2024 إبداع العرب للحلول الرقمية. جميع الحقوق محفوظة.</p>
+            <p class="mt-4 sm:mt-0">تصميم وتطوير بمعايير فائقة السرعة والجودة.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

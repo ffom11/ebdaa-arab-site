@@ -1,0 +1,37 @@
+<svg width="520" height="260" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Ebaa Alarab">
+  <rect width="520" height="260" fill="#ffffff"/>
+  <g transform="translate(0 0)">
+    <path d="M54 220L145 30H190L279 220H226L214 183H120L108 220H54ZM136 147H198L177 92L165 120L154 92L136 147Z" fill="#111827"/>
+    <path d="M250 220L304 30H341L396 220H347L336 182H310L298 220H250ZM318 146H329L321 105L318 146Z" fill="#111827"/>
+    <path d="M184 220H147L165 170H181L184 220Z" fill="#111827" opacity="0.92"/>
+  </g>
+
+  <g transform="translate(275 35)">
+    <circle cx="70" cy="70" r="68" fill="#dfe7ea" stroke="#111827" stroke-width="14"/>
+    <circle cx="70" cy="70" r="46" fill="url(#lens)" stroke="#111827" stroke-width="8"/>
+    <circle cx="70" cy="70" r="16" fill="#0f172a" opacity="0.6"/>
+    <g stroke="#111827" stroke-width="3" stroke-linecap="round" opacity="0.9">
+      <line x1="70" y1="18" x2="70" y2="48"/>
+      <line x1="70" y1="92" x2="70" y2="122"/>
+      <line x1="18" y1="70" x2="48" y2="70"/>
+      <line x1="92" y1="70" x2="122" y2="70"/>
+      <line x1="30" y1="30" x2="48" y2="48"/>
+      <line x1="92" y1="92" x2="110" y2="110"/>
+      <line x1="30" y1="110" x2="48" y2="92"/>
+      <line x1="92" y1="48" x2="110" y2="30"/>
+    </g>
+    <circle cx="70" cy="70" r="8" fill="#0f172a"/>
+  </g>
+
+  <text x="48" y="238" font-size="34" font-weight="700" fill="#0f172a" font-family="Arial, Helvetica, sans-serif">Photography</text>
+
+  <defs>
+    <radialGradient id="lens" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="18%" stop-color="#67e8f9"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="75%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+</svg>

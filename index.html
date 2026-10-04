@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية | إبداع العرب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } },
+                    fontFamily: { sans: ['Tajawal', 'Cairo', 'sans-serif'] },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="brand-depth.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { font-family: 'Tajawal', 'Cairo', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .brand-wordmark { font-family: 'Tajawal', 'Cairo', sans-serif; letter-spacing: -0.02em; }
+        p, span, a, button, input, select, textarea { font-family: 'Tajawal', 'Cairo', sans-serif; }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white overflow-x-hidden" x-data="{ mobileMenu: false }" style="font-feature-settings: 'ss01' 1;">
+    <!-- Header Component -->
+<header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-slate-700/80 p-1 shadow-lg shadow-indigo-900/20 group-hover:scale-105 transition">
+                <img src="logo.svg" alt="شعار إبداع العرب" class="w-full h-full object-contain rounded-xl bg-white">
+            </div>
+            <div>
+                <span class="block text-2xl font-black text-transparent bg-gradient-to-r from-indigo-300 via-violet-300 to-pink-300 bg-clip-text">إبداع العرب</span>
+                <span class="block text-[10px] text-slate-400">للحلول الرقمية والتسويقية</span>
+            </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+            <a href="index.html" class="text-indigo-400 border-b-2 border-indigo-400 pb-1">الرئيسية</a>
+            <a href="about.html" class="text-slate-300 hover:text-indigo-300 transition">من نحن</a>
+            <a href="services.html" class="text-slate-300 hover:text-indigo-300 transition">خدماتنا</a>
+            <a href="portfolio.html" class="text-slate-300 hover:text-indigo-300 transition">معرض الأعمال</a>
+            <a href="contact.html" class="text-slate-300 hover:text-indigo-300 transition">تواصل معنا</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+            <a href="https://wa.me/966566166251" target="_blank" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-xl font-bold shadow-lg shadow-emerald-900/30 transition">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>056 616 6251</span>
+            </a>
+        </div>
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-2xl text-slate-200 p-2">
+            <i :class="mobileMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
+    </div>
+    <div x-show="mobileMenu" x-transition class="md:hidden border-t border-slate-800 bg-slate-900 px-6 py-5 space-y-3 text-sm font-medium">
+        <a href="index.html" class="block text-slate-200">الرئيسية</a>
+        <a href="about.html" class="block text-slate-200">من نحن</a>
+        <a href="services.html" class="block text-slate-200">خدماتنا</a>
+        <a href="portfolio.html" class="block text-slate-200">معرض الأعمال</a>
+        <a href="contact.html" class="block text-slate-200">تواصل معنا</a>
+    </div>
+</header>
+
+<section class="home-hero relative overflow-hidden bg-slate-950 text-white pt-20 pb-24">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.28),_transparent_30%),radial-gradient(circle_at_80%_25%,_rgba(192,132,252,0.22),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(236,72,153,0.18),_transparent_22%)]"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+            <div>
+                <span class="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-2 text-sm font-bold text-indigo-200 shadow-lg shadow-indigo-950/30">
+                    <i class="fa-solid fa-bolt text-amber-400"></i>
+                    وكالة سعودية رائدة في التسويق الرقمي
+                </span>
+                <h1 class="mt-7 text-4xl sm:text-5xl lg:text-[4.1rem] font-extrabold leading-[1.05] tracking-[-0.04em]">
+                    نصمم هوية
+                    <span class="block text-transparent bg-gradient-to-r from-indigo-200 via-violet-300 to-pink-300 bg-clip-text">تجارية قوية</span>
+                    <span class="block">وتنفيذًا رقميًا يرفع قيمتك في السوق.</span>
+                </h1>
+                <p class="mt-6 text-lg font-medium text-slate-300 leading-8 max-w-xl">
+                    نساعد الشركات والمؤسسات على النمو عبر الهوية البصرية، التصوير، الفيديو، المتاجر الإلكترونية، والحملات الرقمية بطريقة احترافية، فعالة، وملهمة للنتائج.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-600 via-violet-600 to-pink-600 hover:from-indigo-500 hover:via-violet-500 hover:to-pink-500 text-white px-7 py-4 font-black shadow-2xl shadow-indigo-900/40 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        اطلب الخدمة الآن
+                    </a>
+                    <a href="services.html" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 hover:bg-slate-800 text-white px-7 py-4 font-bold transition">
+                        <i class="fa-solid fa-compass"></i>
+                        استكشف خدماتنا
+                    </a>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-5 text-sm text-slate-200">
+                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> تصميم احترافي
+                    </div>
+                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-violet-400"></span> إنتاج فيديو
+                    </div>
+                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-400"></span> متجر إلكتروني
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex justify-center lg:justify-end">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-indigo-600/20 via-violet-600/10 to-pink-600/20 blur-3xl rounded-full"></div>
+                <div class="relative w-full max-w-md">
+                    <div class="hero-depth-card rounded-[2rem] border border-slate-700 bg-slate-900/80 p-4 shadow-[0_30px_80px_rgba(79,70,229,0.35)] backdrop-blur-sm">
+                        <div class="rounded-[1.5rem] overflow-hidden border border-slate-800 bg-slate-950">
+                            <div class="min-h-[36rem] bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#1f1b4d] p-6 flex flex-col justify-between relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.18),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(236,72,153,0.14),_transparent_30%)]"></div>
+                                <div class="hero-portrait-stage relative z-10">
+                                    <img src="Copilot_20260929_091351-removebg-preview.png" alt="صورة احترافية لشخص يلبس بدلة سوداء" class="hero-portrait">
+                                </div>
+                                <div class="relative z-10 flex items-center justify-between mt-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 via-violet-500 to-pink-500 shadow-lg shadow-indigo-900/30"></div>
+                                        <div>
+                                            <p class="text-xs text-slate-400">مؤسسة</p>
+                                            <p class="text-xl font-black text-white">إبداع العرب</p>
+                                        </div>
+                                    </div>
+                                    <span class="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold text-emerald-300">متواجد الآن</span>
+                                </div>
+                                <div class="hero-card-stats relative z-10 mt-4 grid grid-cols-2 gap-4">
+                                    <div class="rounded-2xl border border-slate-700 bg-slate-900/70 p-4 shadow-inner shadow-violet-950/40">
+                                        <p class="text-slate-400 text-[11px]">مشاريع منجزة</p>
+                                        <p class="text-3xl font-black text-white mt-2">520+</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-700 bg-slate-900/70 p-4 shadow-inner shadow-violet-950/40">
+                                        <p class="text-slate-400 text-[11px]">رضا العملاء</p>
+                                        <p class="text-3xl font-black text-emerald-400 mt-2">98%</p>
+                                    </div>
+                                </div>
+                                <div class="hero-growth relative z-10 rounded-2xl border border-slate-700 bg-slate-900/75 p-4 mt-4">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <p class="text-sm text-slate-400">نمو العلامة التجارية</p>
+                                        <span class="text-xs font-bold text-indigo-300">+186%</span>
+                                    </div>
+                                    <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full w-[82%] rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-pink-500"></div>
+                                    </div>
+                                    <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+                                        <span>يوليو</span>
+                                        <span>أغسطس</span>
+                                        <span>سبتمبر</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-float-stat absolute -bottom-6 -left-3 rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-3 shadow-xl backdrop-blur-sm">
+                        <p class="text-[10px] text-slate-400">متوسط نمو العملاء</p>
+                        <p class="text-2xl font-black text-indigo-300">+186%</p>
+                    </div>
+                    <div class="hero-float-stat absolute -top-4 right-2 rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-3 shadow-xl backdrop-blur-sm">
+                        <p class="text-[10px] text-slate-400">حملات رقمية</p>
+                        <p class="text-2xl font-black text-pink-300">24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-tags py-8 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center items-center gap-5 text-slate-400 text-sm font-bold">
+            <span class="rounded-full border border-slate-700 bg-slate-950 px-4 py-2">branding</span>
+            <span class="rounded-full border border-slate-700 bg-slate-950 px-4 py-2">media production</span>
+            <span class="rounded-full border border-slate-700 bg-slate-950 px-4 py-2">social ads</span>
+            <span class="rounded-full border border-slate-700 bg-slate-950 px-4 py-2">ecommerce</span>
+            <span class="rounded-full border border-slate-700 bg-slate-950 px-4 py-2">web design</span>
+        </div>
+    </div>
+</section>
+<section class="home-stats py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="home-stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-4xl font-black text-indigo-300">5+</div>
+                <p class="mt-3 text-slate-300">سنوات خبرة في السوق السعودي</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-4xl font-black text-violet-300">520+</div>
+                <p class="mt-3 text-slate-300">مشاريع تم تنفيذها بنجاح</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-4xl font-black text-emerald-300">24/7</div>
+                <p class="mt-3 text-slate-300">دعم سريع ومتواصل عبر واتساب</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-4xl font-black text-pink-300">100%</div>
+                <p class="mt-3 text-slate-300">التزام بالجودة والتسليم في الوقت</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-services py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="inline-block rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-300">خدمات مميزة</span>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-black text-white">كل ما تحتاجه في منصة واحدة</h2>
+            <p class="mt-4 text-slate-400">نقدم حلولاً متكاملة تجمع الإبداع، التقنية، والاستراتيجية في خدمة واحدة تحافظ على وقتك وجهدك.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-indigo-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-500/15 text-indigo-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-camera"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">التصوير الفوتوغرافي</h3>
+                <p class="mt-4 text-slate-400 leading-8">تصوير احترافي للمنتجات، الفعاليات، الشركات، وبوالشوتات الرقمية لإبراز جودتك في أفضل صورة.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-violet-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-violet-500/15 text-violet-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-video"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">المونتاج والفيديو</h3>
+                <p class="mt-4 text-slate-400 leading-8">مونتاج سينمائي، موشن جرافيك، ومحتوى فيديو قوي يرفع حضور علامتك التجارية على السوشيال ميديا.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-pink-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-pink-500/15 text-pink-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-pen-ruler"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">التصميم الجرافيكي</h3>
+                <p class="mt-4 text-slate-400 leading-8">هوية بصرية أنيقة، منشورات، ستوري، كروت، ومحتوى جاهز للنشر يليق بمؤسستك ويساعد في التميز.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-emerald-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 text-emerald-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-store"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">المتاجر الإلكترونية</h3>
+                <p class="mt-4 text-slate-400 leading-8">تصميم متجر احترافي، عرض منتجات جذاب، واستراتيجية تسويقية تجعل المبيعات تتدفق بسهولة وثقة.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-amber-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-amber-500/15 text-amber-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-bullhorn"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">الحملات الرقمية</h3>
+                <p class="mt-4 text-slate-400 leading-8">إعلانات مدفوعة على السوشيال، جوجل، وبينار، مع تقارير وتحليل لتحسين الأداء باستمرار.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-cyan-500/60 transition group">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/15 text-cyan-300 flex items-center justify-center text-2xl"><i class="fa-solid fa-globe"></i></div>
+                <h3 class="mt-6 text-2xl font-black text-white">المواقع الإلكترونية</h3>
+                <p class="mt-4 text-slate-400 leading-8">تصميم مواقع حديثة ومتجاوبة على الهاتف والكمبيوتر، تُحسن ثقة العملاء وتحول الزيارات إلى مبيعات.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-partners py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="inline-block rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-300">شركاء نجاحنا</span>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-black text-white">نصنع شراكات طويلة الأمد مع علاماتٍ رائدة</h2>
+            <p class="mt-4 text-slate-400">من الشركات الناشئة إلى الماركات الكبرى، نساعد كل عميل على تحقيق رؤية واضحة، حضور قوي، ونمو مستدام.</p>
+        </div>
+        <div class="partners-board mb-10" tabindex="0" role="region" aria-label="شعارات شركاء النجاح، اسحب أفقياً لاستعراضها على الشاشات الصغيرة">
+            <img src="شركاء النجاح.png" alt="مجموعة من شعارات شركاء النجاح والعملاء">
+        </div>
+        <div class="home-partner-benefits grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-indigo-500/60 transition">
+                <div class="text-3xl text-indigo-300 mb-4"><i class="fa-solid fa-handshake"></i></div>
+                <h3 class="text-2xl font-black text-white">شراكات طويلة الأمد</h3>
+                <p class="mt-4 text-slate-400 leading-8">نبني علاقة متينة مع العملاء من خلال جودة التنفيذ، واهتمام متواصل، واستراتيجية مرنة من أول يوم.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-violet-500/60 transition">
+                <div class="text-3xl text-violet-300 mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-2xl font-black text-white">نجاح مضمون</h3>
+                <p class="mt-4 text-slate-400 leading-8">نعمل بخطة واضحة، ومقاييس قابلة للقياس، ونقدم نتائج عملية تعكس النمو الحقيقي في الحضور والمبيعات.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-emerald-500/60 transition">
+                <div class="text-3xl text-emerald-300 mb-4"><i class="fa-solid fa-star"></i></div>
+                <h3 class="text-2xl font-black text-white">رضا العملاء</h3>
+                <p class="mt-4 text-slate-400 leading-8">نرتقي بخدمة العملاء إلى مستوى من الثقة والالتزام، ما يساهم في بناء علامة تجارية قوية وموثوقة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-work py-24 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-block rounded-full border border-violet-400/30 bg-violet-500/10 px-3 py-1 text-xs font-bold text-violet-300">أعمالنا</span>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-black text-white">مشاريع تم تنفيذها بلمسة احترافية</h2>
+        </div>
+        <div class="home-work-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="home-work-card group rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-950">
+                <div class="h-64 bg-gradient-to-br from-indigo-500/35 via-slate-800 to-slate-950 flex items-center justify-center text-4xl text-indigo-200"><i class="fa-solid fa-store"></i></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-black text-white">متجر إلكتروني فاخر</h3>
+                    <p class="mt-2 text-slate-400">تجربة بيع احترافية مع تصميم عصري وبراند قوي.</p>
+                </div>
+            </div>
+            <div class="home-work-card group rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-950">
+                <div class="h-64 bg-gradient-to-br from-violet-500/35 via-slate-800 to-slate-950 flex items-center justify-center text-4xl text-violet-200"><i class="fa-solid fa-video"></i></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-black text-white">قصة علامة تجارية</h3>
+                    <p class="mt-2 text-slate-400">إنتاج فيديو ومحتوى بصري يميز الشركة عن المنافسين.</p>
+                </div>
+            </div>
+            <div class="home-work-card group rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-950">
+                <div class="h-64 bg-gradient-to-br from-emerald-500/35 via-slate-800 to-slate-950 flex items-center justify-center text-4xl text-emerald-200"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-black text-white">حملة تسويقية ناجحة</h3>
+                    <p class="mt-2 text-slate-400">محتوى إعلاني مدروس يحقق نتائج ملحوظة في الأداء.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-process py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <span class="inline-block rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300">لماذا نحن؟</span>
+                <h2 class="mt-4 text-3xl sm:text-4xl font-black text-white">خطة واضحة، تنفيذ احترافي، ونتائج قابلة للقياس</h2>
+                <div class="home-why-list mt-8 space-y-5">
+                    <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/15 text-indigo-300 flex items-center justify-center"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">استراتيجية مدروسة</h3>
+                                <p class="text-slate-400">نعمل على تحليل السوق واحتياجاتك قبل التنفيذ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/15 text-violet-300 flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">جودة عالية</h3>
+                                <p class="text-slate-400">نتأكد من كل تفاصيل المشروع قبل تسليمه لك.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-300 flex items-center justify-center"><i class="fa-solid fa-message"></i></div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">تواصل مباشر</h3>
+                                <p class="text-slate-400">نستجيب بسرعة عبر واتساب وتواصل فعلي غير معقد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-[2rem] border border-slate-800 bg-slate-900 p-8">
+                <h3 class="text-2xl font-black text-white mb-6">خطوات العمل</h3>
+                <div class="space-y-5">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-black">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">نقييم المشروع</h4>
+                            <p class="text-slate-400">نستمع إلى هدفك، وقيمتك، والجمهور المستهدف.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-full bg-violet-500 text-white flex items-center justify-center font-black">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">التصميم والتخطيط</h4>
+                            <p class="text-slate-400">نضع الخطة، الهوية، وحدات المحتوى عبر رسومات عصرية.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">التنفيذ والتحسين</h4>
+                            <p class="text-slate-400">نبدأ التنفيذ، ثم نراجع الأداء ونحسن النتائج.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-reviews py-24 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-block rounded-full border border-pink-400/30 bg-pink-500/10 px-3 py-1 text-xs font-bold text-pink-300">تقييمات</span>
+            <h2 class="mt-4 text-3xl sm:text-4xl font-black text-white">ماذا يقول عملاؤنا؟</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-amber-400 text-lg mb-3"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 leading-8">“أداء رائع، تصميم أنيق، والتواصل مع الفريق كان سريعًا واحترافيًا جدًا. أنصح به بشدة.”</p>
+                <div class="mt-6 text-white font-bold">أحمد السالم</div>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-amber-400 text-lg mb-3"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 leading-8">“من أفخم المشاريع التي تعاملنا معها، خاصة في التسويق والهوية البصرية، والنتائج كانت واضحة منذ البداية.”</p>
+                <div class="mt-6 text-white font-bold">سارة القحطاني</div>
+            </div>
+            <div class="rounded-3xl border border-slate-800 bg-slate-950 p-6">
+                <div class="text-amber-400 text-lg mb-3"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></div>
+                <p class="text-slate-300 leading-8">“الموقع الذي تم تصميمه جعل العمل أكثر احترافية، وقد زاد عدد طلبات العملاء بشكل ملحوظ.”</p>
+                <div class="mt-6 text-white font-bold">محمد الحربي</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home-cta py-20 bg-gradient-to-r from-indigo-600 to-violet-600">
+    <div class="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-black text-white">جاهز لنصنع لك حضورًا رقميًا مميزًا؟</h2>
+        <p class="mt-4 text-indigo-100 text-lg">تواصل معنا اليوم وسنصمم لك خطة مناسبة لعملك، بدون تعقيد، وبطريقة احترافية ومباشرة.</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="contact.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-indigo-700 font-black px-7 py-4 transition hover:scale-[1.02]">تواصل معنا</a>
+            <a href="https://wa.me/966566166251" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 text-white font-black px-7 py-4 transition">واتساب مباشر</a>
+        </div>
+    </div>
+</section>
+
+<footer class="homepage-footer bg-slate-950 border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white"><i class="fa-solid fa-gem"></i></div>
+                    <div>
+                        <div class="text-xl font-black text-white">إبداع العرب</div>
+                        <div class="text-xs text-slate-400">للحلول الرقمية والتسويقية</div>
+                    </div>
+                </div>
+                <p class="text-slate-400 leading-7">نبني هوية قوية ونتائج قابلة للقياس عبر محتوى احترافي وتصاميم ذكية واستراتيجيات رقمية فعالة.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-black text-white mb-4">روابط سريعة</h3>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="portfolio.html">معرض الأعمال</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-black text-white mb-4">الخدمات</h3>
+                <ul class="space-y-3 text-slate-400">
+                    <li>التصوير الفوتوغرافي</li>
+                    <li>المونتاج والفيديو</li>
+                    <li>التصميم الجرافيكي</li>
+                    <li>المتاجر الإلكترونية</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-black text-white mb-4">تواصل معنا</h3>
+                <ul class="space-y-3 text-slate-400">
+                    <li><i class="fa-solid fa-phone ml-2 text-indigo-300"></i><span dir="ltr">056 616 6251</span></li>
+                    <li><i class="fa-solid fa-envelope ml-2 text-indigo-300"></i>info@ebdaa.shop</li>
+                    <li><i class="fa-solid fa-location-dot ml-2 text-indigo-300"></i>المملكة العربية السعودية</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-4">
+            <p>© 2025 إبداع العرب. جميع الحقوق محفوظة.</p>
+            <p>مبني بتصميم حديث ومتجاوب بالكامل</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>350px] flex items-center justify-center">
+                <!-- ضع هنا صورة حقيقية من أعمال الشركة -->
+                <div class="text-center p-8 text-slate-400">
+                    <i class="fa-solid fa-image text-5xl mb-3 text-indigo-400"></i>
+                    <p class="text-lg font-semibold text-white">مساحة بانر / صورة رئيسية للشركة</p>
+                    <p class="text-xs text-slate-500 mt-1">&lt;!-- ضع هنا صورة حقيقية من أعمال الشركة --&gt;</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16 pt-10 border-t border-slate-800/80">
+                <div class="bg-slate-800/40 backdrop-blur border border-slate-700/50 p-6 rounded-2xl">
+                    <span class="block text-3xl sm:text-4xl font-black text-indigo-400 mb-1">5+</span>
+                    <span class="text-slate-400 text-sm">سنوات خبرة واحترافية</span>
+                </div>
+                <div class="bg-slate-800/40 backdrop-blur border border-slate-700/50 p-6 rounded-2xl">
+                    <span class="block text-3xl sm:text-4xl font-black text-violet-400 mb-1">500+</span>
+                    <span class="text-slate-400 text-sm">مشروع ناجح ومنجز</span>
+                </div>
+                <div class="bg-slate-800/40 backdrop-blur border border-slate-700/50 p-6 rounded-2xl">
+                    <span class="block text-3xl sm:text-4xl font-black text-emerald-400 mb-1">100%</span>
+                    <span class="text-slate-400 text-sm">نسبة رضا العملاء</span>
+                </div>
+                <div class="bg-slate-800/40 backdrop-blur border border-slate-700/50 p-6 rounded-2xl">
+                    <span class="block text-3xl sm:text-4xl font-black text-pink-400 mb-1">جميع</span>
+                    <span class="text-slate-400 text-sm">مدن المملكة السعودية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 font-semibold tracking-wide uppercase text-sm bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">خدماتنا الاحترافية</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4">حلول رقمية مبتكرة تلبي طموحاتك</h2>
+                <p class="text-slate-400">نضع بين يديك أحدث الأدوات والخبرات لرفع كفاءة عملك التجاري وزيادة مبيعاتك.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 hover:border-indigo-500/50 transition group">
+                    <div class="h-40 rounded-2xl mb-6 overflow-hidden border border-slate-700 bg-slate-950">
+                        <svg viewBox="0 0 500 260" class="w-full h-full" aria-label="التصوير الفوتوغرافي">
+                            <defs>
+                                <linearGradient id="camBg1" x1="0" x2="1">
+                                    <stop offset="0%" stop-color="#0f172a"/>
+                                    <stop offset="100%" stop-color="#1e1b4b"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="500" height="260" fill="url(#camBg1)"/>
+                            <circle cx="390" cy="55" r="44" fill="#8b5cf6" opacity="0.32"/>
+                            <circle cx="110" cy="190" r="65" fill="#22d3ee" opacity="0.18"/>
+                            <rect x="90" y="58" width="320" height="150" rx="24" fill="#111827" stroke="#334155" stroke-width="3"/>
+                            <rect x="155" y="87" width="190" height="95" rx="18" fill="#1f2937"/>
+                            <circle cx="250" cy="135" r="46" fill="#e2e8f0" opacity="0.9"/>
+                            <circle cx="250" cy="135" r="27" fill="#a5b4fc"/>
+                            <circle cx="250" cy="135" r="14" fill="#312e81"/>
+                            <rect x="220" y="175" width="60" height="14" rx="7" fill="#8b5cf6" opacity="0.8"/>
+                            <rect x="130" y="104" width="18" height="62" rx="9" fill="#f8fafc" opacity="0.9"/>
+                            <rect x="350" y="114" width="18" height="70" rx="9" fill="#22d3ee" opacity="0.9"/>
+                            <rect x="294" y="190" width="80" height="16" rx="8" fill="#8b5cf6" opacity="0.85"/>
+                            <rect x="115" y="190" width="90" height="16" rx="8" fill="#22d3ee" opacity="0.75"/>
+                        </svg>
+                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">التصوير الفوتوغرافي</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">تصوير احترافي للمنتجات والفعاليات والشركات بجودة فائقة تبرز جمال تفاصيل عملك.</p>
+                    <a href="services.html#photography" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1">تفاصيل الخدمة <i class="fa-solid fa-arrow-left text-xs"></i></a>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 hover:border-violet-500/50 transition group">
+                    <div class="h-40 rounded-2xl mb-6 overflow-hidden border border-slate-700 bg-slate-950">
+                        <svg viewBox="0 0 500 260" class="w-full h-full" aria-label="المونتاج الاحترافي">
+                            <defs>
+                                <linearGradient id="vidBg1" x1="0" x2="1">
+                                    <stop offset="0%" stop-color="#111827"/>
+                                    <stop offset="100%" stop-color="#312e81"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="500" height="260" fill="url(#vidBg1)"/>
+                            <rect x="44" y="40" width="412" height="180" rx="26" fill="#0f172a" stroke="#475569"/>
+                            <rect x="78" y="74" width="110" height="110" rx="18" fill="#8b5cf6" opacity="0.8"/>
+                            <rect x="210" y="72" width="82" height="112" rx="16" fill="#e2e8f0" opacity="0.9"/>
+                            <rect x="310" y="92" width="116" height="92" rx="18" fill="#22d3ee" opacity="0.7"/>
+                            <circle cx="133" cy="129" r="34" fill="#111827" opacity="0.7"/>
+                            <path d="M122 112 L154 129 L122 146 Z" fill="#f8fafc"/>
+                            <rect x="230" y="120" width="44" height="10" rx="5" fill="#312e81"/>
+                            <rect x="232" y="144" width="64" height="10" rx="5" fill="#cbd5e1"/>
+                            <path d="M342 122 C362 88, 391 88, 406 122 C395 145, 364 148, 342 122Z" fill="#0f172a" opacity="0.7"/>
+                            <circle cx="374" cy="125" r="16" fill="#f8fafc"/>
+                            <circle cx="374" cy="125" r="8" fill="#8b5cf6"/>
+                            <rect x="100" y="198" width="300" height="12" rx="6" fill="#64748b" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-violet-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">المونتاج الاحترافي</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">مونتاج فيديو سينمائي، موشن جرافيك إبداعي، وإعلانات تجارية تخطف الأنظار.</p>
+                    <a href="services.html#video" class="text-violet-400 hover:text-violet-300 text-sm font-semibold flex items-center gap-1">تفاصيل الخدمة <i class="fa-solid fa-arrow-left text-xs"></i></a>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 hover:border-emerald-500/50 transition group">
+                    <div class="h-40 rounded-2xl mb-6 overflow-hidden border border-slate-700 bg-slate-950">
+                        <svg viewBox="0 0 500 260" class="w-full h-full" aria-label="الحملات الإعلانية">
+                            <defs>
+                                <linearGradient id="adsBg1" x1="0" x2="1">
+                                    <stop offset="0%" stop-color="#0f172a"/>
+                                    <stop offset="100%" stop-color="#022c22"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="500" height="260" fill="url(#adsBg1)"/>
+                            <circle cx="380" cy="58" r="42" fill="#34d399" opacity="0.2"/>
+                            <rect x="72" y="70" width="356" height="118" rx="24" fill="#111827" stroke="#374151"/>
+                            <rect x="104" y="96" width="146" height="62" rx="18" fill="#1f2937"/>
+                            <rect x="270" y="96" width="126" height="14" rx="7" fill="#d1fae5" opacity="0.9"/>
+                            <rect x="270" y="122" width="101" height="12" rx="6" fill="#6ee7b7" opacity="0.8"/>
+                            <rect x="270" y="142" width="86" height="12" rx="6" fill="#a7f3d0" opacity="0.7"/>
+                            <path d="M118 184 L174 184 L142 220 Z" fill="#10b981" opacity="0.9"/>
+                            <path d="M248 184 L332 184 L290 220 Z" fill="#34d399" opacity="0.8"/>
+                            <path d="M348 184 L410 184 L379 220 Z" fill="#6ee7b7" opacity="0.7"/>
+                            <circle cx="145" cy="89" r="8" fill="#22c55e"/>
+                            <circle cx="395" cy="95" r="11" fill="#a7f3d0"/>
+                        </svg>
+                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">الحملات الإعلانية</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">إدارة حملات إعلانية ممولة احترافية على منصات التواصل لتحقيق أعلى عائد استثماري ROAS.</p>
+                    <a href="services.html#ads" class="text-emerald-400 hover:text-emerald-300 text-sm font-semibold flex items-center gap-1">تفاصيل الخدمة <i class="fa-solid fa-arrow-left text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+<footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-gem"></i></div>
+                    <span class="text-xl font-bold text-white">إبداع العرب</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    شركة سعودية رائدة في التصوير الفوتوغرافي، مونتاج الفيديو، التصميم الجرافيك، المتاجر الإلكترونية، والتسويق الرقمي.
+                </p>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="https://wa.me/966566166251" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:info@ebdaa.shop" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:966566166251" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-violet-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">روابط سريعة</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-indigo-400 transition">الرئيسية</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-400 transition">من نحن</a></li>
+                    <li><a href="services.html" class="hover:text-indigo-400 transition">خدماتنا الاحترافية</a></li>
+                    <li><a href="portfolio.html" class="hover:text-indigo-400 transition">معرض الأعمال</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-400 transition">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">خدماتنا الرئيسية</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="services.html#photography" class="hover:text-indigo-400 transition">التصوير الفوتوغرافي</a></li>
+                    <li><a href="services.html#video" class="hover:text-indigo-400 transition">المونتاج الاحترافي</a></li>
+                    <li><a href="services.html#ads" class="hover:text-indigo-400 transition">الحملات الإعلانية</a></li>
+                    <li><a href="services.html#ecommerce" class="hover:text-indigo-400 transition">المتاجر الإلكترونية</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">تواصل معنا</h3>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-indigo-400 mt-1"></i><span>المملكة العربية السعودية - تغطية شاملة لجميع مدن المملكة</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-indigo-400"></i><span dir="ltr">056 616 6251 (966+)</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-indigo-400"></i><span>info@ebdaa.shop</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-sm">
+            <p>&copy; 2024 إبداع العرب للحلول الرقمية. جميع الحقوق محفوظة.</p>
+            <p class="mt-4 sm:mt-0">تصميم وتطوير بمعايير فائقة السرعة والجودة.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

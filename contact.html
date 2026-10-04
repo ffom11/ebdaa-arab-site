@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | إبداع العرب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } },
+                    fontFamily: { sans: ['Cairo', 'sans-serif'] },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="brand-depth.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>body { font-family: 'Cairo', sans-serif; } [x-cloak] { display: none !important; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white overflow-x-hidden" x-data="{ mobileMenu: false }">
+    <!-- Header Component -->
+<header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-slate-700/80 p-1 shadow-lg shadow-indigo-900/20 group-hover:scale-105 transition duration-300">
+                <img src="logo.svg" alt="شعار إبداع العرب" class="w-full h-full object-contain rounded-xl bg-white">
+            </div>
+            <div>
+                <span class="text-2xl font-black bg-gradient-to-r from-indigo-400 via-violet-300 to-pink-400 bg-clip-text text-transparent">إبداع العرب</span>
+                <span class="block text-xs text-slate-400">للحلول الرقمية والتسويقية</span>
+            </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium">
+            <a href="index.html" class="nav-home text-slate-300 hover:text-indigo-400 transition">الرئيسية</a>
+            <a href="about.html" class="nav-about text-slate-300 hover:text-indigo-400 transition">من نحن</a>
+            <a href="services.html" class="nav-services text-slate-300 hover:text-indigo-400 transition">خدماتنا</a>
+            <a href="portfolio.html" class="nav-portfolio text-slate-300 hover:text-indigo-400 transition">معرض الأعمال</a>
+            <a href="contact.html" class="nav-contact text-indigo-400 font-bold border-b-2 border-indigo-400 pb-1 hover:text-indigo-400 transition">تواصل معنا</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-4">
+            <a href="https://wa.me/966566166251" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-emerald-600/25 transition transform hover:-translate-y-0.5">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>056 616 6251</span>
+            </a>
+        </div>
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-slate-300 hover:text-white text-2xl p-2 focus:outline-none">
+            <i :class="mobileMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
+    </div>
+    <div x-show="mobileMenu" x-transition class="md:hidden bg-slate-800 border-b border-slate-700 px-6 py-4 space-y-4">
+        <nav class="flex flex-col space-y-3 font-medium">
+            <a href="index.html" class="text-slate-300">الرئيسية</a>
+            <a href="about.html" class="text-slate-300">من نحن</a>
+            <a href="services.html" class="text-slate-300">خدماتنا</a>
+            <a href="portfolio.html" class="text-slate-300">معرض الأعمال</a>
+            <a href="contact.html" class="text-slate-300">تواصل معنا</a>
+        </nav>
+        <div class="pt-4 border-t border-slate-700 flex flex-col gap-3">
+            <a href="https://wa.me/966566166251" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-semibold">
+                <i class="fa-brands fa-whatsapp text-lg"></i> <span>تواصل عبر واتساب</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+    
+    <section class="premium-page-hero py-20 text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <span class="text-indigo-300 font-semibold tracking-wide uppercase text-sm bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">تواصل معنا</span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white mt-5 mb-6">اطلب استشارتك أو مشروعك، وسنبدأ معه مباشرة.</h1>
+            <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">نحن هنا لمساعدتك في تحسين صورتك، بناء فرص جديدة، وتقديم حلول رقمية وعلامية تعزز نموك في السوق السعودي.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-900/50" x-data="{ name: '', phone: '', service: 'التصوير الفوتوغرافي', details: '', submitWhatsApp() { const text = `مرحباً إبداع العرب، أرغب في طلب خدمة:%0A- الاسم: ${encodeURIComponent(this.name)}%0A- الجوال: ${encodeURIComponent(this.phone)}%0A- الخدمة: ${encodeURIComponent(this.service)}%0A- التفاصيل: ${encodeURIComponent(this.details)}`; window.open(`https://wa.me/966566166251?text=${text}`, '_blank'); } }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700 rounded-[2rem] p-6 shadow-2xl shadow-indigo-950/20">
+                        <div class="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-bold text-indigo-300">
+                            <i class="fa-solid fa-headset"></i>
+                            تواصل مباشر
+                        </div>
+                        <h2 class="text-3xl font-black text-white mt-5 mb-4">طرق التواصل المباشر</h2>
+                        <p class="text-slate-400 text-sm leading-7">نرحب بأسئلتك، مشاريعك، وحتى اقتراحاتك. فريقنا متواجد لإرشادك إلى الخدمة الأنسب لاحتياجاتك.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <a href="https://wa.me/966566166251" target="_blank" class="flex items-center gap-4 bg-slate-800/80 border border-slate-700 p-6 rounded-2xl hover:border-emerald-500 transition group">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">واتساب (مباشر وسريع)</span>
+                                <span class="text-xl font-bold text-white" dir="ltr">056 616 6251</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:966566166251" class="flex items-center gap-4 bg-slate-800/80 border border-slate-700 p-6 rounded-2xl hover:border-indigo-500 transition group">
+                            <div class="w-14 h-14 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-2xl group-hover:bg-indigo-600 group-hover:text-white transition"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">الهاتف</span>
+                                <span class="text-xl font-bold text-white" dir="ltr">056 616 6251</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@ebdaa.shop" class="flex items-center gap-4 bg-slate-800/80 border border-slate-700 p-6 rounded-2xl hover:border-violet-500 transition group">
+                            <div class="w-14 h-14 rounded-xl bg-violet-600/20 text-violet-400 flex items-center justify-center text-2xl group-hover:bg-violet-600 group-hover:text-white transition"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">البريد الإلكتروني</span>
+                                <span class="text-lg font-bold text-white">info@ebdaa.shop</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-8 sm:p-10 rounded-[2rem] shadow-2xl shadow-indigo-950/20">
+                    <h3 class="text-2xl font-bold text-white mb-2">نموذج طلب خدمة عبر واتساب</h3>
+                    <p class="text-slate-400 text-sm mb-6">املأ البيانات أدناه وسيتم فتح تطبيق واتساب برسالة جاهزة لإرسالها لفريقنا:</p>
+
+                    <form @submit.prevent="submitWhatsApp()" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">الاسم الكامل *</label>
+                            <input type="text" x-model="name" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500" placeholder="أدخل اسمك هنا">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">رقم الجوال *</label>
+                            <input type="text" x-model="phone" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500" placeholder="05xxxxxxxx">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">نوع الخدمة المطلوب *</label>
+                            <select x-model="service" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                                <option value="التصوير الفوتوغرافي">التصوير الفوتوغرافي</option>
+                                <option value="المونتاج الاحترافي">المونتاج الاحترافي</option>
+                                <option value="الحملات الإعلانية">الحملات الإعلانية</option>
+                                <option value="المتاجر الإلكترونية">المتاجر الإلكترونية</option>
+                                <option value="التصاميم الجرافيكية">التصاميم الجرافيكية</option>
+                                <option value="إدارة التواصل الاجتماعي">إدارة التواصل الاجتماعي</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">تفاصيل المشروع / الطلب *</label>
+                            <textarea x-model="details" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500" placeholder="اكتب تفاصيل مشروعك أو استفسارك هنا..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>إرسال الطلب عبر واتساب</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+<footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-gem"></i></div>
+                    <span class="text-xl font-bold text-white">إبداع العرب</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    شركة سعودية رائدة في التصوير الفوتوغرافي، مونتاج الفيديو، التصميم الجرافيك، المتاجر الإلكترونية، والتسويق الرقمي.
+                </p>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="https://wa.me/966566166251" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:info@ebdaa.shop" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-indigo-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:966566166251" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-violet-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">روابط سريعة</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-indigo-400 transition">الرئيسية</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-400 transition">من نحن</a></li>
+                    <li><a href="services.html" class="hover:text-indigo-400 transition">خدماتنا الاحترافية</a></li>
+                    <li><a href="portfolio.html" class="hover:text-indigo-400 transition">معرض الأعمال</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-400 transition">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">خدماتنا الرئيسية</h3>
+                <ul class="space-y-2.5 text-slate-400 text-sm">
+                    <li><a href="services.html#photography" class="hover:text-indigo-400 transition">التصوير الفوتوغرافي</a></li>
+                    <li><a href="services.html#video" class="hover:text-indigo-400 transition">المونتاج الاحترافي</a></li>
+                    <li><a href="services.html#ads" class="hover:text-indigo-400 transition">الحملات الإعلانية</a></li>
+                    <li><a href="services.html#ecommerce" class="hover:text-indigo-400 transition">المتاجر الإلكترونية</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">تواصل معنا</h3>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-indigo-400 mt-1"></i><span>المملكة العربية السعودية - تغطية شاملة لجميع مدن المملكة</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-indigo-400"></i><span dir="ltr">056 616 6251 (966+)</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-indigo-400"></i><span>info@ebdaa.shop</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-sm">
+            <p>&copy; 2024 إبداع العرب للحلول الرقمية. جميع الحقوق محفوظة.</p>
+            <p class="mt-4 sm:mt-0">تصميم وتطوير بمعايير فائقة السرعة والجودة.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
